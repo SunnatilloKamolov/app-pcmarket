@@ -13,4 +13,5 @@ import uz.pdp.apppcmarket.projection.CustomGameChair;
 public interface GameChairRepository extends JpaRepository<GameChair,Integer> {
     @RestResource(path = "byName")
     Page<GameChair> findAllByName(@Param("name") String name, Pageable pageable);
+    boolean existsByName(String name);
 }

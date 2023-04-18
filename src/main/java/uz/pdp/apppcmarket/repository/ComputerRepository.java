@@ -13,4 +13,5 @@ import uz.pdp.apppcmarket.projection.CustomComputer;
 public interface ComputerRepository extends JpaRepository<Computer,Integer> {
     @RestResource(path = "byName")
     Page<Computer> findAllByName(@Param("name") String name, Pageable pageable);
+    boolean existsByName(String name);
 }
